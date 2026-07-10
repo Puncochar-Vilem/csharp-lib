@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Security;
 using System.Text;
 
 namespace eWayCRM.API.Exceptions
@@ -64,6 +65,7 @@ namespace eWayCRM.API.Exceptions
             methodName = info.GetString(nameof(MethodName));
         }
 
+        [SecurityCritical]
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             base.GetObjectData(info, context);
